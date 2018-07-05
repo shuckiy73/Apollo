@@ -1,0 +1,42 @@
+@import "../../css/utils.css";
+
+html, body {
+  font-family: 'Noto Sans', Sans-Serif;
+  font-weight: 400;
+  color:#000;
+  min-width:320px;
+}
+
+.block-helper {
+  background-color: #C4D50B;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.line {
+  border-top: 1px solid rgba(37, 37, 37, 0.3);
+}
+
+.visible-sm {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;  
+  }
+}
+
+.visible-md {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block; 
+  }
+}
+
+
+
