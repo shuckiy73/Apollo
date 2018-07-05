@@ -1,27 +1,41 @@
+.section-aboutus {
+	padding-top: 55px;
+	padding-bottom: 20px;
+
+	@media (min-width: 1200px) {
+		padding-bottom: 70px;
+	}	
+}
+
 .section__title {
 	font-size: 28px;
 	line-height: 38px;
-	
 	letter-spacing: -1px;
 	font-weight: bold;
-	text-align: center;
-	padding-top: 55px;
-	padding-bottom: 40px;
+	margin-bottom: 35px;
 
 	@media (min-width: 1200px) {
 		font-size: 38px;
 		line-height: 48px;
+		margin-bottom: 50px;
 	}
 }
 
 .aboutus-block {
 	text-align: center;
-	padding-bottom: 70px;
+	margin-bottom: 35px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 45px;		
+	}
+
+	@media (min-width: 1200px) {
+		margin-bottom: 0px;
+	}	
 }
 
 .aboutus-block__image {
 	height: 125px;
-	// text-align: center;
 }
 .aboutus-block__title {
 	font-size: 18px;
@@ -38,6 +52,5 @@
 .aboutus-block__text {
 	font-size: 14px;
 	line-height: 24px;
-	font-weight: normal;	
 	color:#777777;
 }
