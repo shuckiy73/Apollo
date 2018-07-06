@@ -1,0 +1,54 @@
+.mobile-menu__icon {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+.mobile-menu__icon span {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+.mobile-menu__icon span:before,
+.mobile-menu__icon span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  transition-duration: 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+.mobile-menu__icon span:before {
+  top: -8px;
+  transition-property: top, transform;
+}
+.mobile-menu__icon span:after {
+  bottom: -8px;
+  transition-property: bottom, transform;
+}
+.is-opened span {
+  background-color: transparent;
+}
+.is-opened span:before {
+  top: 0;
+  transform: rotate(45deg);
+  transition-duration: 0.3s;
+  transition-property: top, transform;
+  transition-delay: 0s, 0.3s;
+}
+.is-opened span:after {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: 0.3s;
+  transition-property: bottom, transform;
+  transition-delay: 0s, 0.3s;
+}
