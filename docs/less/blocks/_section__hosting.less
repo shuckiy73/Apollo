@@ -1,6 +1,6 @@
 .section-hosting {
 	color:#333333;
-	padding-top: 40px;
+	padding-top: 50px;
 	padding-bottom: 50px;
 
 	@media (min-width:768px) {
@@ -8,33 +8,39 @@
 	}
 	@media (min-width:1200px) {
 		padding-top: 70px;
-		padding-bottom: 0px;		
+		padding-bottom: 36px;
 	}
+}
+
+//Класс для настройки отступов в секции с ноутбук, 
+//так как его позиционировали абсолютно для 1200px
+.notebook--paddings {
+	padding-top: 40px;
+	
+	@media (min-width:768px) {
+		padding-top: 77px;
+	}
+	@media (min-width:1200px) {
+		padding-top: 70px;
+		padding-bottom: 88px;
+	}	
 }
 
 .section-hosting__image {
-
+	position:relative;
 }
 
-.pl-150 {
+//Класс для позиционировании картинки с ноутбуком для 1200px
+.img--abs-position {
 	@media (min-width:1200px) {
-		padding-left: 150px;
-	}
-}
-
-.pr-80 {
-	@media (min-width:1200px) {
-		padding-right: 80px;
-	}
-}
-
-.pb-100 {
-	@media (min-width:1200px) {
-		padding-bottom: 100px;
+		position: absolute;
+		top:0;
+		left:-60px;
 	}
 }
 
 .section-hosting__title {
+	position:relative;
 	font-size: 28px;
 	line-height: 38px;
 	font-weight: bold;
@@ -68,4 +74,35 @@
 	background-image: url('../img/icons/arrow-orange.png');
 	background-repeat: no-repeat;
 	background-position: left top;
+}
+
+
+[class*=section__mark]:before {	
+	position: absolute;
+	top:-37px;
+	left:-13px;
+	display: block;
+	content:"0";
+	width: 26px;
+	height: 26px;
+	background-color: #ffc80a;
+	border-radius: 50%;
+
+	font-size: 16px;
+	line-height: 1;
+	padding-left: 9px;
+	padding-top: 5px;
+	color:#fff;
+	
+	@media (min-width:1200px) {
+		top:5px;
+		left:-30px;
+	}
+}
+
+.section__mark-1:before {
+	content:"1";
+}
+.section__mark-2:before {
+	content:"2";
 }

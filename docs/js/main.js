@@ -26,6 +26,10 @@ $(document).ready(function(){
 		
 		// Параметры карусели
 	    singleItem : true,
+
+	    slideSpeed : 800,
+	    paginationSpeed : 800,
+	    rewindSpeed : 1000,
 	 
 	    // Navigation
 	    navigation : true,
