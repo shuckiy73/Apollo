@@ -44,7 +44,7 @@ $(document).ready(function(){
 
 	// Альтернативный вариант плавной прокрутки
 	//slide2id - плавная прокрутка по ссылкам внутри страницы
-	// $("nav a,a[href='#top'],a[rel='m_PageScroll2id'],a.PageScroll2id").mPageScroll2id({
+	// $("nav a,a[href='#top']").mPageScroll2id({
 	//     highlightSelector:"nav a"
 	// });
 
