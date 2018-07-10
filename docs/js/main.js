@@ -1,19 +1,28 @@
 $(document).ready(function(){
 
-	var nav = $("#navigation"); //Якорь списка с навигацией
-    var mNav= $('#mobile-menu'); //Якорь строчки мобильного меню с иконкой
+	var nav = $("#navigation"); //Список с навигацией
+    var mNav= $('#mobile-menu'); //Мобильного меню с иконкой
 
+    // Открываем/Закрываем мобильное меню, анимируем иконку, доюавляем класс модификатор
     $(mNav).click(function(e){
    	    e.preventDefault();
 	    nav.slideToggle();
 	    $(this).toggleClass('is-opened mobile-menu--active');
     });
+
+    // Проверяем открыто ли мобильное меню и сварачиваем его
+    function checkCloseMobileMenu() {
+    	if ( $(mNav).hasClass("is-opened") ) {
+			mNav.removeClass('is-opened mobile-menu--active');
+			nav.slideToggle();
+		}
+    }
     
     // При изменении размера окна, в большую сторону, если меню было скрыто, показываем его.
     // И удаляем классы is-opened mobile-menu--active
 	$(window).resize(function(){
 		var w = $(window).width();
-		if(w > 992)  {
+		if(w > 1200)  {
 		    nav.removeAttr('style');
 		    mNav.removeClass('is-opened mobile-menu--active');
 		}
@@ -23,21 +32,21 @@ $(document).ready(function(){
 	$("#navigation").on("click","a", function (e) {
 		//отменяем стандартную обработку нажатия по ссылке
 		e.preventDefault();
-		
-		// Заккрываем мобильное пеню, если открыто
-		if ( $(mNav).hasClass("is-opened")  ) {
-   			mNav.removeClass('is-opened mobile-menu--active');
-   			nav.slideToggle();
-		}
-
+		 // Сворачиваем мобильное меню при переходе по ссылке
+		checkCloseMobileMenu();
 		//забираем идентификатор блока с атрибута href
 		var id  = $(this).attr('href'),
 		//узнаем высоту от начала страницы до блока на который ссылается якорь
-			top = $(id).offset().top;
+		top = $(id).offset().top;
 		//анимируем переход на расстояние - top за 1500 мс
 		$('body,html').animate({scrollTop: top}, 1500);
 	});
 
+	// Альтернативный вариант плавной прокрутки
+	//slide2id - плавная прокрутка по ссылкам внутри страницы
+	// $("nav a,a[href='#top'],a[rel='m_PageScroll2id'],a.PageScroll2id").mPageScroll2id({
+	//     highlightSelector:"nav a"
+	// });
 
 	// Инициализация карусели 
 	$("#owl-carousel").owlCarousel({
