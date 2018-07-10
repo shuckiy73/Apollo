@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	var nav = $("#navigation"); //Якорь списка с навигацией
-    var mNav= $('#mobile-menu'); //Якорь строчки мобильного меню со значком
+    var mNav= $('#mobile-menu'); //Якорь строчки мобильного меню с иконкой
 
     $(mNav).click(function(e){
    	    e.preventDefault();
@@ -41,16 +41,13 @@ $(document).ready(function(){
 
 	// Инициализация карусели 
 	$("#owl-carousel").owlCarousel({
-		
 		// Параметры карусели
 	    singleItem : true,
 	    slideSpeed : 800,
 	    paginationSpeed : 800,
 	    rewindSpeed : 1000,
-	    // Navigation
 	    navigation : true,
 	    navigationText : ["",""],
-	    // CSS Styles
 	    theme : "header-slider-theme",
 	});
 
