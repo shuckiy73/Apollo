@@ -45,8 +45,11 @@ $(document).ready(function(){
 	// Альтернативный вариант плавной прокрутки
 	// slide2id - плавная прокрутка по ссылкам внутри страницы
 	$("nav a,a[href='#top']").mPageScroll2id({
-	    // highlightSelector:"nav a",
+	    highlightSelector:"nav a",
 	    offset:50 //Задаем отступ сверху например для мобильного меню
+	    // clickedClass: "mPS2id-target-last"	// Устанавливает класс для ссылки, при клике на неё
+		// targetClass: "active-item"	// Устанавливает класс для блока, при его появлении во время скролла
+		// highlightClass: "top"
 	});
 
 	// Инициализация карусели 
