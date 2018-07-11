@@ -35,18 +35,19 @@ $(document).ready(function(){
 		 // Сворачиваем мобильное меню при переходе по ссылке
 		checkCloseMobileMenu();
 		//забираем идентификатор блока с атрибута href
-		var id  = $(this).attr('href'),
-		//узнаем высоту от начала страницы до блока на который ссылается якорь
-		top = $(id).offset().top;
-		//анимируем переход на расстояние - top за 1500 мс
-		$('body,html').animate({scrollTop: top}, 1500);
+		// var id  = $(this).attr('href'),
+		// //узнаем высоту от начала страницы до блока на который ссылается якорь
+		// top = $(id).offset().top;
+		// //анимируем переход на расстояние - top за 1500 мс
+		// $('body,html').animate({scrollTop: top}, 1500);
 	});
 
 	// Альтернативный вариант плавной прокрутки
-	//slide2id - плавная прокрутка по ссылкам внутри страницы
-	// $("nav a,a[href='#top']").mPageScroll2id({
-	//     highlightSelector:"nav a"
-	// });
+	// slide2id - плавная прокрутка по ссылкам внутри страницы
+	$("nav a,a[href='#top']").mPageScroll2id({
+	    // highlightSelector:"nav a",
+	    offset:50 //Задаем отступ сверху например для мобильного меню
+	});
 
 	// Инициализация карусели 
 	$("#owl-carousel").owlCarousel({
